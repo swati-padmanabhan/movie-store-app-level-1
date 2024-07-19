@@ -32,7 +32,7 @@ namespace MovieStoreLevel1.models
                 $"Movie Name: {Name}\n" +
                 $"Movie Genre: {Genre}\n" +
                 $"Movie Year of Release: {YearOfRelease}" +
-                $"\n======================================";
+                $"\n====================================================";
         }
     }
 }

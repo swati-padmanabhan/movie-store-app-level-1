@@ -15,7 +15,7 @@ namespace MovieStoreLevel1
         {
             while (true)
             {
-                Console.WriteLine("==========Welcome to Movie Store Application : Swati Padmanabhan==========");
+                Console.WriteLine("\n==========Welcome to Movie Store Application : Swati Padmanabhan==========");
                 Console.WriteLine("What do you wish to do?\n" +
                     "1. Add New Movie\n" +
                     "2. Display All Movies\n" +
@@ -45,16 +45,17 @@ namespace MovieStoreLevel1
                     if (findMovie != null)
                         Console.WriteLine(findMovie);
                     else
-                        Console.WriteLine("Account Not Found");
+                        Console.WriteLine("Movie Not Found");
                     break;
                 case 4:
                     RemoveMovie();
                     break;
                 case 5:
                     if (movies.Count == 0)
-                        Console.WriteLine("Account List is already Empty !");
+                        Console.WriteLine("Movie List is already Empty !");
                     else
                         movies.Clear();
+                    Console.WriteLine("Movies Cleared Successfully !");
                     break;
                 case 6:
                     Environment.Exit(0);
@@ -67,6 +68,12 @@ namespace MovieStoreLevel1
         }
         static void AddNewMovie()
         {
+            if (movies.Count >= 5)
+            {
+                Console.WriteLine("Insufficient space, only 5 movies allowed.");
+                return;
+            }
+
             Console.WriteLine("Enter Id: ");
             int id = Convert.ToInt32(Console.ReadLine());
 
